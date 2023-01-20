@@ -30,10 +30,10 @@ int main(void)
     char result[size + 1];
     size_t frequency[segments];
     size_t rem = length % segment;
-    if (rem) {
-        for (size_t i = 0; i < rem; ++i) 
-            result[i] = '0';
-    }
+    
+    for (size_t i = 0; i < rem; ++i) 
+        result[i] = '0';
+
     strcat(result, s);
     
     for (size_t i = 0; i < segments; ++i) {
