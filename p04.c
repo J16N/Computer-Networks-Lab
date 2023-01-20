@@ -14,9 +14,6 @@
 #include <stdio.h>
 #include <string.h>
 
-void divide(size_t, size_t, size_t, char [], char []);
-
-
 int main(void)
 {
     char s[100];
@@ -32,8 +29,12 @@ int main(void)
     size_t size = segment * segments + 1;
     char result[size + 1];
     size_t frequency[segments];
-    
-    divide(1, segment, length, s, result);
+    size_t rem = length % segment;
+    if (rem) {
+        for (size_t i = 0; i < rem; ++i) 
+            result[i] = '0';
+    }
+    strcat(result, s);
     
     for (size_t i = 0; i < segments; ++i) {
         printf("\nSegment-%lu: ", i + 1);
@@ -49,20 +50,4 @@ int main(void)
     }
     
     return 0;
-}
-
-
-void divide(size_t i, size_t segment, 
-            size_t len, char str[], char result[])
-{
-    if (i > len) return;
-    
-    divide(i + segment, segment, len, str, result);
-    
-    int start = i - (len % segment);
-    int end = start + segment;
-    
-    for (int j = start; j < end; ++j, ++i) {
-        result[i - 1] = j > 0 ? str[j - 1] : '0';
-    }
 }
