@@ -23,14 +23,14 @@ int main(void)
     scanf("%d", &mode);
     
     if (mode > 1 || mode < 0) {
-        printf("Invalid mode.");
+        printf("Invalid mode.\n");
         return -1;
     }
     
     int parity = s[length - 1] - '0';
     
     int result = 0;
-    for (int i = 0; i < length; ++i)
+    for (int i = 0; i < length - 1; ++i)
         result = result ^ (s[i] - '0');
         
     int expected_parity = mode ? !result : result;
