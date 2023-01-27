@@ -1,4 +1,4 @@
-/*
+/**
  *  Question:
  *  Input a string of 0 and 1.
  *    a. Divide it into segments of equal length.
@@ -8,7 +8,7 @@
  * 
  *  Author:
  *  Mr. Rabbit
-*/
+**/
 
 #include <math.h>
 #include <stdio.h>

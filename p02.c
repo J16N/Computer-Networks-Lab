@@ -1,11 +1,11 @@
-/*
+/**
  *  Question:
  *  Input a string of alphabets. Now count frequency of each 
  *  alphabet present in that string.
  * 
  *  Author:
  *  Mr. Rabbit
-*/
+**/
 
 #include <stdio.h>
 #include <stdlib.h>
